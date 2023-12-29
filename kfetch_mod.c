@@ -109,8 +109,14 @@ static void __exit chardev_exit(void)  {
 void get_hostname(char *msg) {
     struct new_utsname *uts; 
     uts = utsname(); 
+
     sprintf(msg, "                   \033[33m%s\033[0m\n", uts->nodename);
-    sprintf(msg + strlen(msg), "                   --------------------------\n");
+    // Printing the seperate line based on the length
+    sprintf(msg + strlen(msg), "                   ");
+    for (size_t i = 0; i < strlen(uts->nodename); i++) {
+        sprintf(msg + strlen(msg), "-");
+    }
+    strcat(msg + strlen(msg), "\n");
 }
 
 void get_kernel_info(char *msg) {
