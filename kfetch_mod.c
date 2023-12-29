@@ -164,7 +164,7 @@ void get_CPU_counts(char *msg) {
     struct file *cpuinfo_file;
     int online_cpus = 0;
     int total_cpus = 0;
-    char cpuinfo_buffer[512]; 
+    char cpuinfo_buffer[4096]; 
     char *cpu_block;
     char *core_id;
 
