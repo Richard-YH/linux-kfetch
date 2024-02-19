@@ -28,6 +28,7 @@ The kernel module fetches the following system information:
 
 - Use `make` command to compile the kernel module.
 - Use `make load` to insert the kernel module.
+- Use `make unload` to remove the kernel module.
 
 ### User-space Program (`kfetch`):
 
